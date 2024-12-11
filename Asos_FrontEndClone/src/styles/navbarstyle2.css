@@ -1,0 +1,58 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Navbar2{
+    display: flex;
+    background-color: #525051;
+    color: white;
+    padding: .1vw;
+    gap: 1vw;
+}
+
+.NormalText{
+    display: flex;
+    justify-content: center;
+    padding: 1vw;
+    font-size: 1vw;
+}
+
+.NormalText:hover, .SpecialText:hover{
+    background-color: #eeeeee;
+    color: #635f58;
+}
+
+
+
+.SpecialText {
+    position: relative;
+    display: inline-block; /* Ensures the box wraps around the text */
+    margin-left: 1vw;
+    padding: 1vw;
+    font-weight: 700;
+    z-index: 1;
+    color: white; /* Ensure text is visible on red background */
+    font-size: 1vw;
+}
+
+.SpecialText::before {
+    content: ""; /* Pseudo-element for the slanted box */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1; /* Puts the box behind the text */
+    transform: skew(-10deg); /* Creates the slanted effect */
+    border-radius: 3px; /* Optional: Add a slightly rounded corner */
+}
+
+.SpecialText:hover {
+    color: #635f58; /* Change text color on hover */
+}
+
+.SpecialText:hover::before {
+    transform: none; /* Remove the slanted effect */
+    background-color: transparent; /* Make the box disappear */
+}
